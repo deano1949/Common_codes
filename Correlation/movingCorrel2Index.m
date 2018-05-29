@@ -18,7 +18,7 @@ for i=t:size(X,1)
         correl2inx(isnan(correl2inx))=0;
         avgcorrel2inx=avgcorrel2inx+correl2inx(1,2);
     end
-    Correl2Inx(i)=avgcorrel2inx/size(stck,2);
+    Correl2Inx(i)=avgcorrel2inx/size(X,2);
  
 end
 

@@ -33,21 +33,21 @@ end
 % Given initial beta and R (and P)
 for t=1:length(y)
     if (t > 1)
-        beta(:, t)=beta(:, t-1); % state prediction. Equation 3.7
-        R=P+Vw; % state covariance prediction. Equation 3.8
+        beta(:, t)=beta(:, t-1); % state prediction. 
+        R=P+Vw; % state covariance prediction.
     end
     
-    yhat(t)=x(t, :)*beta(:, t); % measurement prediction. Equation 3.9
+    yhat(t)=x(t, :)*beta(:, t); % measurement prediction. 
 
-    Q(t)=x(t, :)*R*x(t, :)'+Ve; % measurement variance prediction. Equation 3.10
+    Q(t)=x(t, :)*R*x(t, :)'+Ve; % measurement variance prediction. 
 
     % Observe y(t)
     e(t)=y(t)-yhat(t); % measurement prediction error
     
     K=R*x(t, :)'./Q(t); % Kalman gain
     
-    beta(:, t)=beta(:, t)+K*e(t); % State update. Equation 3.11
-    P=R-K*x(t, :)*R; % State covariance update. Euqation 3.12
+    beta(:, t)=beta(:, t)+K*e(t); % State update. 
+    P=R-K*x(t, :)*R; % State covariance update. 
 
 end
 
