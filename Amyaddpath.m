@@ -22,6 +22,7 @@ else
     addpath(genpath(path));
     addpath(genpath('C:\Spectrion\Data\PriceData'));
     addpath(genpath('C:\Spectrion\Data\NewUniverse'));
+    javaaddpath c:\blp\DAPI\blpapi3.jar;
 
 end
 
